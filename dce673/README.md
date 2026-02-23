@@ -1,15 +1,15 @@
 # dce673
 
-📚 Disciplina: dce673  
-🎓 Curso: Ciência da Computação – UNIFAL-MG  
+📘 **Disciplina:** Programação Funcional  
+🎓 **Curso:** Ciência da Computação – UNIFAL-MG  
 
-## 📂 Estrutura
-- aulas/        → anotações de aula
-- listas/       → listas de exercícios
-- trabalhos/    → trabalhos avaliativos
-- projetos/     → projetos práticos
-- docs/         → PDFs, slides e materiais extras
+## 📁 Estrutura
+- `aulas/` → conceitos funcionais  
+- `listas/` → exercícios e problemas  
+- `trabalhos/` → trabalhos avaliativos  
+- `projetos/` → projetos funcionais  
+- `docs/` → material de apoio  
 
 ## 📌 Observações
+- Ênfase em imutabilidade e funções puras
 - Versionado com Git
-- Organização pensada para o semestre inteiro
