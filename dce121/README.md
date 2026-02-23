@@ -1,15 +1,15 @@
 # dce121
 
-📚 Disciplina: dce121  
-🎓 Curso: Ciência da Computação – UNIFAL-MG  
+📘 **Disciplina:** Matemática Discreta  
+🎓 **Curso:** Ciência da Computação – UNIFAL-MG  
 
-## 📂 Estrutura
-- aulas/        → anotações de aula
-- listas/       → listas de exercícios
-- trabalhos/    → trabalhos avaliativos
-- projetos/     → projetos práticos
-- docs/         → PDFs, slides e materiais extras
+## 📁 Estrutura
+- `aulas/` → teoria e exemplos  
+- `listas/` → listas de exercícios  
+- `trabalhos/` → trabalhos avaliativos  
+- `projetos/` → aplicações práticas (se houver)  
+- `docs/` → PDFs e material de apoio  
 
 ## 📌 Observações
-- Versionado com Git
-- Organização pensada para o semestre inteiro
+- Ênfase em lógica, conjuntos e provas
+- Organização voltada para estudo contínuo
