@@ -1,0 +1,11 @@
+*.pdf
+*.zip
+*.rar
+*.7z
+*.exe
+*.log
+*.tmp
+*.o
+*.class
+node_modules/
+__pycache__/
