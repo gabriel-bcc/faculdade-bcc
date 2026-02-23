@@ -1,15 +1,15 @@
 # dce676
 
-📚 Disciplina: dce676  
-🎓 Curso: Ciência da Computação – UNIFAL-MG  
+📘 **Disciplina:** Ética, Computador e Sociedade  
+🎓 **Curso:** Ciência da Computação – UNIFAL-MG  
 
-## 📂 Estrutura
-- aulas/        → anotações de aula
-- listas/       → listas de exercícios
-- trabalhos/    → trabalhos avaliativos
-- projetos/     → projetos práticos
-- docs/         → PDFs, slides e materiais extras
+## 📁 Estrutura
+- `aulas/` → conteúdos teóricos e discussões  
+- `listas/` → atividades e reflexões  
+- `trabalhos/` → trabalhos escritos e análises  
+- `projetos/` → projetos ou estudos de caso  
+- `docs/` → textos, artigos e PDFs  
 
 ## 📌 Observações
+- Foco em reflexão crítica e ética profissional
 - Versionado com Git
-- Organização pensada para o semestre inteiro
