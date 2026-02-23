@@ -1,15 +1,15 @@
 # dce672
 
-📚 Disciplina: dce672  
-🎓 Curso: Ciência da Computação – UNIFAL-MG  
+📘 **Disciplina:** Programação Lógica  
+🎓 **Curso:** Ciência da Computação – UNIFAL-MG  
 
-## 📂 Estrutura
-- aulas/        → anotações de aula
-- listas/       → listas de exercícios
-- trabalhos/    → trabalhos avaliativos
-- projetos/     → projetos práticos
-- docs/         → PDFs, slides e materiais extras
+## 📁 Estrutura
+- `aulas/` → fundamentos de lógica  
+- `listas/` → exercícios práticos  
+- `trabalhos/` → trabalhos avaliativos  
+- `projetos/` → projetos lógicos  
+- `docs/` → PDFs e referências  
 
 ## 📌 Observações
-- Versionado com Git
-- Organização pensada para o semestre inteiro
+- Uso de raciocínio lógico e declarativo
+- Organização focada em clareza
