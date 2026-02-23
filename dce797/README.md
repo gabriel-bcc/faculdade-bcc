@@ -1,14 +1,14 @@
 # dce797
 
-📚 Disciplina: dce797  
-🎓 Curso: Ciência da Computação – UNIFAL-MG  
+📘 **Disciplina:** AEDs III  
+🎓 **Curso:** Ciência da Computação – UNIFAL-MG  
 
-## 📂 Estrutura
-- aulas/        → anotações de aula
-- listas/       → listas de exercícios
-- trabalhos/    → trabalhos avaliativos
-- projetos/     → projetos práticos
-- docs/         → PDFs, slides e materiais extras
+## 📁 Estrutura
+- `aulas/` → anotações de aula  
+- `listas/` → listas de exercícios  
+- `trabalhos/` → trabalhos avaliativos  
+- `projetos/` → projetos práticos  
+- `docs/` → PDFs, slides e materiais extras  
 
 ## 📌 Observações
 - Versionado com Git
