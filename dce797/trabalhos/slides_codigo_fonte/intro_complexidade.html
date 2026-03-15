@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 36px;
+            margin-left: 40px;
+            margin-bottom: 12px;
+        }
+        .content {
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 8px; /* reduced to save vertical space */
+            line-height: 1.4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 4px; /* reduced */
+            font-size: 18px;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding-top: 6px; /* reduced */
+            padding-left: 10px; /* slightly reduced */
+            text-align: left;
+        }
+        th {
+            background-color: #252526;
+            color: #569CD6;
+        }
+        .highlight {
+            color: #CE9178;
+            font-weight: bold;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/complexidade/teoria</div>
+        <div class="presenter-tag">APRESENTADOR 1</div>
+        <h2>Introdução à Complexidade</h2>
+        <div class="content">
+            <p>A complexidade computacional nos ajuda a classificar problemas com base nos recursos (tempo/espaço) necessários para resolvê-los.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classe</th>
+                        <th>Descrição</th>
+                        <th>Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight">P</td>
+                        <td>Problemas resolvidos em tempo polinomial. "Fáceis" de resolver.</td>
+                        <td>Ordenação, Busca Binária.</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">NP</td>
+                        <td>Soluções podem ser verificadas em tempo polinomial.</td>
+                        <td>Sudoku, Fatoração.</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">NP-Completo</td>
+                        <td>Os problemas mais "difíceis" em NP. Se um for P, então P=NP.</td>
+                        <td>Caixeiro Viajante, 3-SAT.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer">// Se resolvermos um NP-Completo em tempo polinomial, resolvemos todos.</div>
+    </div>
+</body>
+</html>

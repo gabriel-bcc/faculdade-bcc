@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 32px;
+            margin-left: 40px;
+            margin-bottom: 30px;
+        }
+        .content {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .implication-box {
+            background-color: #252526;
+            border: 1px solid #569CD6;
+            padding-top: 20px;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            font-size: 22px;
+            text-align: center;
+        }
+        .proof-steps {
+            border-left: 4px solid #CE9178;
+            padding-top: 10px;
+            padding-left: 30px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        .highlight {
+            color: #4EC9B0;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #CE9178;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/reducao/corretude/fwd</div>
+        <div class="presenter-tag">APRESENTADOR 5</div>
+        <h2>Corretude: Da Lógica para o Grafo</h2>
+        <div class="content">
+            <div class="implication-box">
+                Se <span class="highlight">Φ é satisfatível</span> ⇒ <span class="highlight">G tem Independent Set de tamanho m</span>
+            </div>
+            
+            <div class="proof-steps">
+                <p>1. Se Φ é satisfatível, existe uma atribuição que torna cada cláusula <span class="keyword">Verdadeira</span>.</p>
+                <p>2. Em cada cláusula Cᵢ, pelo menos um literal deve ser verdadeiro. <span class="keyword">Escolhemos um</span> desses literais por cláusula.</p>
+                <p>3. No grafo G, selecionamos os <span class="keyword">m vértices</span> correspondentes a esses literais escolhidos.</p>
+                <p>4. <span class="highlight">Por que é um Independent Set?</span></p>
+                <p style="padding-left: 20px;">• Não há arestas de triângulo entre eles (escolhemos apenas um por triângulo).</p>
+                <p style="padding-left: 20px;">• Não há arestas de consistência (não podemos escolher x e ¬x, pois ambos seriam verdadeiros).</p>
+            </div>
+        </div>
+        <div class="footer">// m cláusulas satisfeitas garantem m vértices independentes.</div>
+    </div>
+</body>
+</html>

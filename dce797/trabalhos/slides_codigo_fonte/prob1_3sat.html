@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 36px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+        }
+        .content {
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .code-box {
+            background-color: #252526;
+            padding-top: 20px;
+            padding-left: 20px;
+            border-left: 4px solid #CE9178;
+            margin-top: 30px;
+            font-size: 24px;
+            color: #DCDCAA;
+        }
+        .highlight {
+            color: #569CD6;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/complexidade/3-sat</div>
+        <div class="presenter-tag">APRESENTADOR 2</div>
+        <h2>Problema 1: 3-SAT</h2>
+        <div class="content">
+            <p>O 3-SAT foi o primeiro problema a ser provado como <span class="highlight">NP-Completo</span>. Ele serve como base para quase todas as outras provas de completude.</p>
+            <p><strong>Definição:</strong> Dada uma fórmula booleana em Forma Normal Conjuntiva (CNF), onde cada cláusula tem exatamente 3 literais, existe uma atribuição que a torna verdadeira?</p>
+            <div class="code-box">
+                Φ = (x₁ ∨ ¬x₂ ∨ x₃) ∧ (¬x₁ ∨ x₂ ∨ x₄)
+            </div>
+            <p style="margin-top: 30px;">
+                • <span class="highlight">Literal:</span> Uma variável (x) ou sua negação (¬x).<br>
+                • <span class="highlight">Cláusula:</span> Uma disjunção (OU) de literais.<br>
+                • <span class="highlight">Fórmula:</span> Uma conjunção (E) de cláusulas.
+            </p>
+        </div>
+        <div class="footer">// O Teorema de Cook-Levin provou que o SAT é NP-Completo.</div>
+    </div>
+</body>
+</html>

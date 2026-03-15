@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 36px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+        }
+        .content {
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        .reduction-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border: 1px dashed #569CD6;
+            padding-top: 30px;
+        }
+        .box {
+            border: 2px solid #CE9178;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            min-width: 250px;
+            min-height: 100px;
+        }
+        .arrow {
+            font-size: 40px;
+            color: #4EC9B0;
+        }
+        .mapping-list {
+            margin-top: 30px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .highlight {
+            color: #569CD6;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/complexidade/reducao</div>
+        <div class="presenter-tag">APRESENTADOR 3</div>
+        <h2>Passo 2: A Redução Polinomial</h2>
+        <div class="content">
+            <p style="font-size: 20px;">Para provar que o Independent Set é NP-Completo, transformamos uma instância de 3-SAT em uma de Independent Set em tempo polinomial.</p>
+            
+            <div class="reduction-box">
+                <div class="box">
+                    <div class="highlight">Instância 3-SAT</div>
+                    <div style="font-size: 14px; margin-top: 10px;">Fórmula Φ com m cláusulas</div>
+                </div>
+                <div class="arrow">f(Φ) ➔</div>
+                <div class="box">
+                    <div class="highlight">Instância Indep. Set</div>
+                    <div style="font-size: 14px; margin-top: 10px;">Grafo G e k = m</div>
+                </div>
+            </div>
+
+            <div class="mapping-list">
+                <p>• <span class="highlight">Cláusulas:</span> Mapeadas para subgrafos específicos (Gadgets).</p>
+                <p>• <span class="highlight">Literais:</span> Mapeados para vértices dentro dos gadgets.</p>
+                <p>• <span class="highlight">Consistência:</span> Arestas adicionais impedem escolhas contraditórias.</p>
+                <p>• <span class="highlight">Objetivo:</span> Φ é satisfatível ⇔ G tem conjunto independente de tamanho m.</p>
+            </div>
+        </div>
+        <div class="footer">// A função f deve ser executável em tempo polinomial O(n^c).</div>
+    </div>
+</body>
+</html>

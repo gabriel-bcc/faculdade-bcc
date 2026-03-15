@@ -1,0 +1,156 @@
+{
+  "project_info": {
+    "title": "Prova de NP-Completude: Do 3-SAT ao Independent Set",
+    "created": 1773233499.1133122,
+    "last_updated": 1773236002.358178,
+    "total_slides": 12
+  },
+  "slides": [
+    {
+      "id": "capa",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "intro_complexidade",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "prob1_3sat",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "prob2_is",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "is_em_np",
+      "state": "edited",
+      "pageNum": 5
+    },
+    {
+      "id": "reducao_ideia",
+      "state": "edited",
+      "pageNum": 6
+    },
+    {
+      "id": "gadgets_triangulos",
+      "state": "edited",
+      "pageNum": 7
+    },
+    {
+      "id": "arestas_consistencia",
+      "state": "edited",
+      "pageNum": 8
+    },
+    {
+      "id": "exemplo_visual",
+      "state": "edited",
+      "pageNum": 9
+    },
+    {
+      "id": "corretude_fwd",
+      "state": "edited",
+      "pageNum": 10
+    },
+    {
+      "id": "corretude_bwd",
+      "state": "edited",
+      "pageNum": 11
+    },
+    {
+      "id": "conclusao_refs",
+      "state": "edited",
+      "pageNum": 12
+    }
+  ],
+  "outline": [
+    {
+      "id": "capa",
+      "title": "Prova de NP-Completude: Do 3-SAT ao Independent Set",
+      "summary": "Título, disciplina e informações acadêmicas com estética de terminal.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "intro_complexidade",
+      "title": "Introdução à Complexidade Computacional",
+      "summary": "Explicação das classes P, NP e NP-Completo usando uma tabela comparativa.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "prob1_3sat",
+      "title": "Problema 1: 3-SAT (O Problema Base)",
+      "summary": "Definição do 3-SAT e sua importância como o primeiro problema NP-Completo.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "prob2_is",
+      "title": "Problema 2: Independent Set (O Alvo)",
+      "summary": "Definição formal do problema do Conjunto Independente em grafos.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "is_em_np",
+      "title": "Passo 1: Provando que Independent Set ∈ NP",
+      "summary": "Demonstração da verificabilidade em tempo polinomial.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "reducao_ideia",
+      "title": "Passo 2: A Redução Polinomial",
+      "summary": "Estratégia de transformação de 3-SAT para Independent Set.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "gadgets_triangulos",
+      "title": "Construção do Grafo: Os Triângulos",
+      "summary": "Como as cláusulas são transformadas em triângulos no grafo.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "arestas_consistencia",
+      "title": "Arestas de Consistência Lógica",
+      "summary": "Garantindo que a atribuição de valores seja válida através de arestas entre literais opostos.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "exemplo_visual",
+      "title": "Exemplo de Redução Visual",
+      "summary": "Aplicação prática da redução em uma fórmula pequena.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "corretude_fwd",
+      "title": "Corretude: Da Lógica para o Grafo",
+      "summary": "Prova de que se a fórmula é satisfatível, o grafo tem um conjunto independente.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "corretude_bwd",
+      "title": "Corretude: Do Grafo para a Lógica",
+      "summary": "Prova de que se o grafo tem um conjunto independente, a fórmula é satisfatível.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "conclusao_refs",
+      "title": "Conclusão e Referências",
+      "summary": "Resumo da prova e bibliografia recomendada.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    }
+  ]
+}

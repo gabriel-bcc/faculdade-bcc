@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 36px;
+            margin-left: 40px;
+            margin-bottom: 30px;
+        }
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-top: 10px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .definition-box {
+            border-left: 4px solid #CE9178;
+            padding-top: 10px;
+            padding-left: 20px;
+        }
+        .definition-box h3 {
+            color: #CE9178;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .definition-box p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .io-box {
+            background-color: #252526;
+            padding-top: 20px;
+            padding-left: 20px;
+            font-size: 18px;
+            border: 1px solid #333;
+        }
+        .io-box p {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            color: #4EC9B0;
+        }
+        .visual-placeholder {
+            border: 1px dashed #569CD6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            color: #569CD6;
+            text-align: center;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/complexidade/independent-set</div>
+        <div class="presenter-tag">APRESENTADOR 2</div>
+        <h2>Problema 2: Independent Set</h2>
+        <div class="grid-layout">
+            <div class="definition-box">
+                <h3>Definição Formal</h3>
+                <p>Dado um grafo não direcionado <span class="highlight">G = (V, E)</span> e um inteiro <span class="highlight">k</span>, existe um subconjunto de vértices <span class="highlight">S ⊆ V</span> tal que:</p>
+                <p>1. O tamanho do conjunto é pelo menos k: <span class="highlight">|S| ≥ k</span>.</p>
+                <p>2. Nenhum par de vértices em S é adjacente: <span class="highlight">∀ u, v ∈ S, (u, v) ∉ E</span>.</p>
+                <div class="io-box">
+                    <p><span class="highlight">Entrada:</span> Grafo G, Inteiro k</p>
+                    <p><span class="highlight">Saída:</span> Sim/Não (Problema de Decisão)</p>
+                </div>
+            </div>
+            <div class="visual-placeholder">
+                <i class="fas fa-project-diagram" style="font-size: 80px; margin-bottom: 20px;"></i>
+                <p style="font-size: 20px;">Conceito Visual:</p>
+                <p style="font-size: 16px; margin-top: 10px; color: #D4D4D4;">Vértices que não compartilham arestas.<br>O objetivo é encontrar o maior conjunto possível.</p>
+            </div>
+        </div>
+        <div class="footer">// Este é o problema que provaremos ser NP-Completo via redução do 3-SAT.</div>
+    </div>
+</body>
+</html>
