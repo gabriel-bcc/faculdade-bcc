@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoBank+</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#home" class="logo-link" data-page="home">NeoBank+</a>
+            <nav>
+                <a href="#home" class="nav-link" data-page="home">Home</a>
+                <a href="#dashboard" class="nav-link" data-page="dashboard">Dashboard</a>
+                <a href="#pix" class="nav-link" data-page="pix">PIX</a>
+                <a href="#cartoes" class="nav-link" data-page="cartoes">Cartões</a>
+                <a href="#cadastro" class="nav-link" data-page="cadastro">Abrir Conta</a>
+            </nav>
+            <button id="dark-mode-toggle" title="Alternar tema">🌙</button>
+        </div>
+    </header>
+
+    <main class="main-content"> 
+
+        <section id="home-page" class="page hero-section">
+            
+            <div class="container hero-container">
+                <h2>Inteligência financeira na palma da sua mão.</h2>
+                <p>Controle total, segurança avançada e a agilidade que você precisa. Bem-vindo ao NeoBank+.</p>
+                <a href="#cadastro" class="btn btn-home-cta nav-link" data-page="cadastro">Abra sua conta grátis</a>
+            </div>
+            
+            <div class="container features-section">
+                <h3>Conheça o NeoBank+</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="icon">🚀</span>
+                        <h4>Agilidade e Simplicidade</h4>
+                        <p>Transações rápidas, interface intuitiva e sem burocracia para o seu dia a dia.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">🔒</span>
+                        <h4>Segurança Avançada</h4>
+                        <p>Proteção de dados, monitoramento antifraude e autenticação robusta para sua tranquilidade.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">📈</span>
+                        <h4>Controle Financeiro</h4>
+                        <p>Extratos detalhados, ferramentas de orçamento e metas para você alcançar seus objetivos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container how-it-works-section">
+                <h3>Abra sua conta em 3 passos simples</h3>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h4>Cadastre-se</h4>
+                        <p>Preencha seus dados em menos de 5 minutos.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h4>Valide seus Documentos</h4>
+                        <p>Envie fotos dos seus documentos de forma segura (KYC).</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h4>Comece a Usar</h4>
+                        <p>Aproveite seu PIX, cartões virtuais e todas as vantagens.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container app-preview-section">
+                <div class="app-preview-text">
+                    <h3>Seu banco em ação</h3>
+                    <p>Veja como é fácil gerenciar seu dinheiro com um dashboard completo, extratos claros e acesso rápido ao PIX e cartões.</p>
+                    <a href="#dashboard" class="btn nav-link" data-page="dashboard">Ver Dashboard (Demo)</a>
+                </div>
+                <div class="app-preview-image">
+                    <img src="dashboard-preview.png" alt="Preview do App NeoBank+">
+                </div>
+            </div>
+
+        </section>
+
+        <section id="cadastro-page" class="page container">
+            <h2><span class="page-icon">📝</span> Abra sua Conta Digital</h2>
+            <p>Simples, rápido e 100% digital.</p>
+            <form id="form-cadastro">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" required>
+                </div>
+                <button type="submit" class="btn">Abrir Conta Agora</button>
+            </form>
+            <p id="cadastro-success" class="success-message" style="display: none;">Conta criada com sucesso! (Simulação)</p>
+        </section>
+
+        <section id="dashboard-page" class="page container">
+            
+            <div id="alerta-fraude" class="alerta">
+                <strong>Alerta de Segurança:</strong> Detectamos uma tentativa de compra suspeita de R$ 1.200,00. <a href="#">Verificar agora</a>
+            </div>
+
+            <h2><span class="page-icon">🏠</span> Meu Dashboard</h2>
+            <div class="card saldo">
+                <h3>Saldo Disponível</h3>
+                <p>R$ 4.580,22</p>
+            </div>
+
+            <h3>Extrato Recente</h3>
+            <ul class="extrato-lista">
+                <li>
+                    <span class="extrato-icon apple"></span>
+                    <span>Pagamento - Apple Store</span> 
+                    <span class="valor negativo">- R$ 19,90</span>
+                </li>
+                <li>
+                    <span class="extrato-icon spotify">🎧</span>
+                    <span>Pagamento - Spotify</span> 
+                    <span class="valor negativo">- R$ 39,90</span>
+                </li>
+                <li>
+                    <span class="extrato-icon pix">↓</span>
+                    <span>PIX Recebido - Jojo T.</span> 
+                    <span class="valor positivo">+ R$ 150,00</span>
+                </li>
+                 <li>
+                    <span class="extrato-icon pix">↑</span>
+                    <span>Transferência PIX - Lucy W.</span> 
+                    <span class="valor negativo">- R$ 200,00</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="pix-page" class="page container">
+            <h2><span class="page-icon">💸</span> Transferência PIX</h2>
+            <form id="form-pix">
+                <div class="form-group">
+                    <label for="pix-chave">Chave PIX (E-mail, CPF ou Telefone)</label>
+                    <input type="text" id="pix-chave" value="exemplo@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="pix-valor">Valor (R$)</label>
+                    <input type="number" id="pix-valor" value="50.00">
+                </div>
+                <button type="submit" class="btn">Transferir</button>
+            </form>
+            <p id="pix-success" class="success-message" style="display: none;">Transferência PIX mockada realizada com sucesso!</p>
+        </section>
+
+        <section id="cartoes-page" class="page container">
+            <h2><span class="page-icon">💳</span> Meus Cartões</h2>
+            <button id="btn-emitir-cartao" class="btn">Emitir Cartão Virtual</button>
+            
+            <div id="cartao-virtual" class="card-virtual" style="display: none;">
+                <div class="card-chip"></div>
+                <p class="card-number">4012 3456 7890 1234</p>
+                <div class="card-footer">
+                    <span>FULANA DE TOWN</span>
+                    <span>12/28</span>
+                </div>
+                <span class="card-cvv">CVV: 123</span>
+            </div>
+        </section>
+
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>

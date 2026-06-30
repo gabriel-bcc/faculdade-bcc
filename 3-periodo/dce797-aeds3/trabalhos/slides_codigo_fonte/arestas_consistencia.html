@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 32px;
+            margin-left: 40px;
+            margin-bottom: 30px;
+        }
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .text-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #CE9178;
+            font-weight: bold;
+        }
+        .logic-box {
+            background-color: #252526;
+            border: 1px solid #333;
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+        .rule-display {
+            text-align: center;
+            font-size: 24px;
+            color: #4EC9B0;
+        }
+        .node-pair {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .node {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #569CD6;
+            line-height: 76px;
+            text-align: center;
+            color: #D4D4D4;
+            font-size: 28px;
+        }
+        .connector {
+            width: 100px;
+            height: 2px;
+            background-color: #CE9178;
+            position: relative;
+        }
+        .connector::after {
+            content: "ARESTA";
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #CE9178;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/reducao/consistencia</div>
+        <div class="presenter-tag">APRESENTADOR 4</div>
+        <h2>Arestas de Consistência Lógica</h2>
+        <div class="main-content">
+            <div class="text-section">
+                <p>Apenas criar triângulos não é suficiente. Precisamos garantir que a escolha de literais seja <span class="highlight">logicamente consistente</span>.</p>
+                <p><strong>A Regra:</strong><br>
+                Adicionamos uma aresta entre cada par de vértices que representam literais contraditórios (ex: <span class="highlight">x</span> e <span class="highlight">¬x</span>).</p>
+                <p><strong>Por que isso é necessário?</strong><br>
+                Em um conjunto independente, não podemos escolher dois vértices conectados. Isso impede que o algoritmo selecione <span class="highlight">x=V</span> e <span class="highlight">x=F</span> simultaneamente.</p>
+                <p>Essas arestas conectam vértices de <span class="highlight">triângulos diferentes</span>, "amarrando" a lógica de toda a fórmula.</p>
+            </div>
+            <div class="logic-box">
+                <div class="rule-display">
+                    <p style="margin-bottom: 30px; color: #D4D4D4;">Restrição de Variável:</p>
+                    <div class="node-pair">
+                        <div class="node">x</div>
+                        <div class="connector"></div>
+                        <div class="node">¬x</div>
+                    </div>
+                    <p style="font-size: 16px; color: #6A9955; margin-top: 40px;">// Impede a escolha de ambos no Independent Set</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">// Esta etapa garante que a solução do grafo seja uma atribuição válida para a fórmula.</div>
+    </div>
+</body>
+</html>

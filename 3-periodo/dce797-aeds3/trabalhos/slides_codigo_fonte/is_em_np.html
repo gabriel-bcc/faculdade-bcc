@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 36px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+        }
+        .content {
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .algo-box {
+            background-color: #252526;
+            border-left: 4px solid #4EC9B0;
+            padding-top: 20px;
+            padding-left: 30px;
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        .keyword { color: #569CD6; }
+        .comment { color: #6A9955; }
+        .string { color: #CE9178; }
+        .complexity {
+            margin-top: 30px;
+            font-size: 22px;
+            color: #CE9178;
+            text-align: center;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/complexidade/independent-set/np-proof</div>
+        <div class="presenter-tag">APRESENTADOR 3</div>
+        <h2>Passo 1: Independent Set ∈ NP</h2>
+        <div class="content">
+            <p>Para provar que um problema é NP-Completo, primeiro mostramos que ele é <span class="keyword">verificável</span> em tempo polinomial.</p>
+            
+            <div class="algo-box">
+                <span class="comment">// Certificado: Um subconjunto de vértices S ⊆ V</span><br>
+                <span class="keyword">function</span> verify(G, k, S):<br>
+                &nbsp;&nbsp;<span class="keyword">if</span> size(S) < k: <span class="keyword">return</span> <span class="string">False</span><br>
+                &nbsp;&nbsp;<span class="keyword">for each</span> u <span class="keyword">in</span> S:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for each</span> v <span class="keyword">in</span> S:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> u != v <span class="keyword">and</span> has_edge(G, u, v):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">False</span><br>
+                &nbsp;&nbsp;<span class="keyword">return</span> <span class="string">True</span>
+            </div>
+
+            <div class="complexity">
+                Complexidade de Verificação: <span class="keyword">O(|V|²)</span> → Polinomial
+            </div>
+            
+            <p style="margin-top: 20px;">Como podemos verificar uma solução candidata eficientemente, o problema pertence à classe <span class="keyword">NP</span>.</p>
+        </div>
+        <div class="footer">// O certificado é a "prova" que alguém nos dá para conferir.</div>
+    </div>
+</body>
+</html>

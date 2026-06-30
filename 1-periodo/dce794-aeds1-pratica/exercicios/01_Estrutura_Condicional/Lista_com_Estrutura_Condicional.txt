@@ -1,0 +1,28 @@
+1. Peça ao usuário dois números e exiba qual é o maior. Se forem iguais, informe isso ao usuário.
+
+2. Peça ao usuário sua idade e classifique-a conforme as faixas etárias:
+
+    Até 12 anos: "Criança"
+    Entre 13 e 17 anos: "Adolescente"
+    18 anos ou mais: "Adulto"
+
+3. Uma loja dá 10% de desconto para compras acima de R$100,00, 15% acima de R$500,00 e 20% acima de R$1.000,00. E ainda, no cartão de crédito, faz o valor da compra em 3 parcelas para compras até R$500,00, em 6 parcelas até R$1.000,00 e em 12 parcelas acima disso. Compras até R$100,00 não parcela no cartão de crédito. Peça o valor da compra ao usuário e informe o valor final a ser pago, aplicando o desconto se necessário, e o valor das parcelas para o cartão de crédito.
+
+4. O operador % em uma expressão aritmética retorna o resto da divisão entre dois números inteiros, por exemplo, 27 % 5 resulta no valor 2. Peça ao usuário um ano e determine se ele é bissexto. Um ano é bissexto se:
+
+    For divisível por 4 e não for divisível por 100, ou
+    For divisível por 400
+
+Exemplo: 2024 é bissexto, mas 1900 não é.
+
+5. Peça ao usuário uma nota de 0 a 10 e converta-a em um conceito:
+
+    9 a 10 → A
+    7 a 8.9 → B
+    5 a 6.9 → C
+    3 a 4.9 → D
+    0 a 2.9 → F
+
+Se a nota digitada estiver fora do intervalo, exiba uma mensagem de erro.
+
+6. Peça ao usuário três números e exiba qual é o menor. Não precisa informar se existem iguais.

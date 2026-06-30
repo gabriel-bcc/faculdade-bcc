@@ -1,0 +1,582 @@
+/* CSS do MVP NeoBank+
+    Autor: Gustavo Zimmermann
+    Foco: Simulação de SPA, responsividade básica e modo escuro.
+*/
+
+/* 1. VARIÁVEIS DE COR (Novas cores principais) */
+:root {
+    /* Cores principais */
+    --bg-color: #FFF9F8;
+    --card-bg: #FFFFFF;
+    --text-color: #3C4A5D;
+    --text-light: #6c757d;
+    --accent-primary: #BF8273;
+    --accent-primary-hover: #a97063;
+    --accent-secondary-hover: #5f8e86;
+    --accent-positive: #3EBD93;
+    --accent-negative: #D9534F;
+    --border-color: #f0f0f0;
+    --input-bg: #fdfdfd;
+
+    /* Cores para o fundo animado (Modo Claro) */
+    --bg-anim-1: #FFF9F8; 
+    --bg-anim-2: #f0f5f4; 
+    --bg-anim-3: #f9f2f0; 
+}
+
+body.dark-mode {
+    /* Cores do Modo Escuro */
+    --bg-color: #3C4A5D;
+    --card-bg: #4a5a6d;
+    --text-color: #ECEFF4;
+    --text-light: #9a9ea5;
+    --accent-primary: #BF8273;
+    --accent-primary-hover: #a97063;
+    --accent-secondary: #6EA39A;
+    --accent-secondary-hover: #5f8e86;
+    --accent-positive: #3EBD93;
+    --accent-negative: #D9534F;
+    --border-color: #5a6a7d;
+    --input-bg: #4a5a6d;
+
+    /* Cores para o fundo animado (Modo Escuro) */
+    --bg-anim-1: #3C4A5D; 
+    --bg-anim-2: #4c5a6d; 
+    --bg-anim-3: #4a575a; 
+}
+
+/* Animação do degradê do fundo */
+@keyframes animatedGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 2. ESTILOS GERAIS E FUNDO ANIMADO */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+
+    /* Config do fundo animado */
+    background: linear-gradient(-45deg, var(--bg-anim-1), var(--bg-anim-2), var(--bg-anim-3), var(--bg-anim-1));
+    background-size: 400% 400%;
+    animation: animatedGradient 15s ease infinite; /* 15s para ser mais visível */
+}
+
+.container {
+    width: 100%;
+    padding: 20px 0; 
+}
+
+/* Container principal para limitar a largura do conteúdo */
+.main-content { 
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* 3. CABEÇALHO (HEADER) */
+header {
+    background-color: var(--card-bg);
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra para "flutuar" */
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
+    
+    /* Deixa o header fixo no topo ao rolar */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo-link {
+    font-size: 24px;
+    color: var(--accent-secondary); /* Cor Ciano */
+    font-weight: 700;
+    text-decoration: none;
+}
+
+header nav {
+    flex-grow: 1; 
+    text-align: center; 
+}
+
+header nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 10px; 
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s ease-out;
+}
+
+/* Efeito de "levantar" ao passar o mouse */
+header nav a:hover {
+    color: var(--text-color);
+    transform: translateY(-2px);
+}
+
+/* Estilo do link da página ativa */
+header nav a.active {
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+/* Botão de Modo Escuro */
+#dark-mode-toggle {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+#dark-mode-toggle:hover {
+    background-color: var(--bg-color);
+}
+
+
+/* 4. ANIMAÇÃO E ESTRUTURA DAS PÁGINAS */
+
+/* Estilo base para todas as "páginas" (cards) */
+.page {
+    display: none; /* Controlado pelo JS */
+    opacity: 0;
+    
+    /* Efeito de transição de zoom e fade */
+    transform: scale(0.98);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    margin-top: 20px;
+    box-sizing: border-box; 
+    width: 100%;
+}
+
+/* A Home é especial, não tem fundo de card */
+#home-page {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    margin-top: 0;
+    border-radius: 0;
+}
+
+/* Classes de controle do JS para a transição */
+.page.active {
+    display: block;
+}
+.page.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Estilo global dos títulos de página */
+h2 {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    transition: color 0.3s, border-color 0.3s;
+    /* Flex para alinhar o ícone com o texto */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-icon {
+    font-size: 24px;
+}
+
+/* Títulos das seções (ex: "Conheça o NeoBank+") */
+h3 {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 28px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+p {
+    color: var(--text-light);
+    transition: color 0.3s;
+}
+
+/* 5. ESTILOS DA PÁGINA INICIAL */
+
+/* Bloco principal (Hero) */
+.hero-container {
+    background-color: var(--card-bg);
+    padding: 60px 30px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    margin-top: 20px; /* Espaçamento do header */
+}
+
+/* Título principal da Home */
+.hero-section h2 {
+    font-size: 36px;
+    border-bottom: none;
+    margin-bottom: 15px;
+    color: var(--accent-secondary);
+
+    /* [CORREÇÃO] Sobrescreve o 'display: flex' global */
+    display: block;
+    /* O 'text-align: center' é herdado do '.hero-container' */
+}
+
+/* Parágrafo do Hero */
+.hero-section .hero-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: var(--text-light);
+    text-align: center; /* Garantia de centralização */
+}
+
+/* Botão principal com degradê (CTA) */
+.btn-home-cta {
+    padding: 16px 25px;
+    font-size: 18px;
+    background: linear-gradient(90deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+    color: white;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-home-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(232, 122, 94, 0.3);
+}
+
+/* Grid "Conheça o NeoBank+" */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+/* Em telas menores, vira 1 coluna */
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.feature-item {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.feature-item:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.feature-item .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: block;
+    color: var(--accent-secondary); 
+}
+.feature-item h4 {
+    color: var(--text-color);
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+
+/* 6. SEÇÃO "COMO COMEÇAR" (Home) */
+.how-it-works-section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+}
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+.step-item .step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-secondary);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+}
+.step-item h4 {
+    color: var(--text-color);
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+
+/* 7. SEÇÃO "PREVIEW DO APP" (Home) */
+.app-preview-section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+.app-preview-text {
+    flex: 1;
+}
+.app-preview-text h3 {
+    text-align: left;
+    border: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.app-preview-text p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+.app-preview-image {
+    flex: 1;
+    text-align: center;
+}
+.app-preview-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* Placeholder para a imagem */
+    background-color: var(--input-bg);
+    min-height: 300px;
+    display: block;
+    border: 1px dashed var(--border-color);
+    color: var(--text-light);
+    padding: 20px;
+    box-sizing: border-box;
+}
+/* Deixa a seção vertical em telas pequenas */
+@media (max-width: 768px) {
+    .app-preview-section {
+        flex-direction: column;
+    }
+    .app-preview-text h3 {
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 15px;
+    }
+}
+
+
+/* 8. FORMULÁRIOS E BOTÕES (Geral) */
+.form-group { margin-bottom: 20px; }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(232, 122, 94, 0.2);
+}
+
+/* Botão padrão */
+.btn {
+    background-color: var(--accent-primary);
+    color: white;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover {
+    background-color: var(--accent-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(232, 122, 94, 0.2);
+}
+
+/* 9. COMPONENTES (Alerta, Saldo, Extrato) */
+
+/* Alerta de fraude */
+.alerta {
+    background-color: #FFF3CD;
+    border: 1px solid #FFEEBA;
+    color: #856404;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.alerta a { color: #856404; font-weight: 700; }
+
+/* Card de Saldo */
+.card.saldo {
+    background-color: var(--bg-color); 
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.card.saldo h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-light);
+    font-weight: 600;
+    text-align: left;
+    border-bottom: none;
+    padding: 0;
+}
+.card.saldo p {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Lista de Extrato (baseado no Figma) */
+.extrato-lista { list-style: none; padding: 0; margin: 0; }
+.extrato-lista li {
+    display: flex;
+    align-items: center;
+    padding: 15px 5px;
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.3s;
+    gap: 15px;
+}
+.extrato-lista li:last-child { border-bottom: none; }
+.extrato-lista li span { font-size: 16px; }
+.extrato-lista li span:nth-child(2) {
+    flex-grow: 1; /* Faz o nome da transação ocupar o espaço */
+}
+.extrato-lista .valor { font-weight: 700; text-align: right; }
+.extrato-lista .valor.positivo { color: var(--accent-positive); }
+.extrato-lista .valor.negativo { color: var(--accent-negative); }
+
+.extrato-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+}
+.extrato-icon.apple { background-color: #333; }
+.extrato-icon.spotify { background-color: #1DB954; }
+.extrato-icon.pix { background-color: var(--text-light); }
+
+
+/* Mensagem de sucesso (formulários) */
+.success-message {
+    background-color: #D4EDDA;
+    color: #155724;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+/* 10. CARTÃO VIRTUAL (Página Cartões) */
+.card-virtual {
+    background: linear-gradient(45deg, var(--accent-secondary), #3EBD93); 
+    color: white;
+    padding: 25px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 350px;
+    min-height: 200px;
+    margin-top: 20px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* Versão do cartão para o modo escuro */
+.dark-mode .card-virtual {
+    background: linear-gradient(45deg, #2E3440, #3B4252); 
+}
+.card-virtual .card-chip {
+    width: 45px;
+    height: 35px;
+    background-color: #ffc107;
+    border-radius: 6px;
+}
+.card-virtual .card-number {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin: 25px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+.card-virtual .card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.card-virtual .card-cvv {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: #fff;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 32px;
+            margin-left: 40px;
+            margin-bottom: 30px;
+        }
+        .content {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .proof-box {
+            background-color: #252526;
+            border-left: 4px solid #CE9178;
+            padding-top: 20px;
+            padding-left: 30px;
+            margin-top: 10px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        .keyword { color: #569CD6; }
+        .comment { color: #6A9955; }
+        .logic { color: #CE9178; }
+        .step {
+            margin-top: 25px;
+            font-size: 20px;
+        }
+        .highlight {
+            color: #4EC9B0;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/reducao/prova/corretude-bwd</div>
+        <div class="presenter-tag">APRESENTADOR 5</div>
+        <h2>Corretude: Do Grafo para a Lógica</h2>
+        <div class="content">
+            <p class="step">Se <span class="highlight">G</span> possui um Independent Set <span class="highlight">S</span> de tamanho <span class="highlight">m</span>:</p>
+            
+            <div class="proof-box">
+                <span class="comment">// 1. Distribuição nos Gadgets</span><br>
+                Como existem <span class="logic">m</span> triângulos e <span class="logic">|S| = m</span>, <span class="keyword">S</span> deve conter exatamente um vértice de cada triângulo.<br>
+                
+                <span class="comment">// 2. Atribuição de Valores</span><br>
+                Para cada vértice <span class="logic">v ∈ S</span>, atribuímos o valor <span class="keyword">Verdadeiro</span> ao literal correspondente.<br>
+                
+                <span class="comment">// 3. Consistência Lógica</span><br>
+                Devido às arestas de consistência, <span class="keyword">S</span> nunca conterá <span class="logic">x</span> e <span class="logic">¬x</span> simultaneamente. A atribuição é válida.<br>
+                
+                <span class="comment">// 4. Satisfatibilidade</span><br>
+                Como cada triângulo (cláusula) tem um representante em <span class="keyword">S</span>, cada cláusula terá pelo menos um literal verdadeiro.
+            </div>
+
+            <p class="step" style="margin-top: 40px; text-align: center; font-weight: bold;">
+                Conclusão: A fórmula <span class="highlight">Φ</span> é satisfatível.
+            </p>
+        </div>
+        <div class="footer">// O caminho inverso garante que a redução é um "se e somente se".</div>
+    </div>
+</body>
+</html>

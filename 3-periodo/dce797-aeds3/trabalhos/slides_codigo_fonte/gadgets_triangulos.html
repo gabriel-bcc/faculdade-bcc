@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 32px;
+            margin-left: 40px;
+            margin-bottom: 30px;
+        }
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .text-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #CE9178;
+            font-weight: bold;
+        }
+        .gadget-box {
+            background-color: #252526;
+            border: 1px solid #333;
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+        .visual-triangle {
+            text-align: center;
+            font-size: 24px;
+            color: #4EC9B0;
+            line-height: 1.2;
+        }
+        .node {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border: 2px solid #569CD6;
+            line-height: 56px;
+            text-align: center;
+            margin: 10px;
+            color: #D4D4D4;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/reducao/gadgets</div>
+        <div class="presenter-tag">APRESENTADOR 4</div>
+        <h2>Construção do Grafo: Os Triângulos</h2>
+        <div class="main-content">
+            <div class="text-section">
+                <p>Para cada cláusula <span class="highlight">Cᵢ = (l₁ ∨ l₂ ∨ l₃)</span> na fórmula 3-SAT, criamos um "gadget" no grafo G.</p>
+                <p>Este gadget é um <span class="highlight">triângulo</span> (grafo completo K₃) onde cada vértice representa um dos três literais da cláusula.</p>
+                <p><strong>Propriedade Fundamental:</strong><br>
+                Em um conjunto independente, não podemos escolher dois vértices adjacentes. Portanto, em cada triângulo, podemos escolher <span class="highlight">no máximo 1 vértice</span>.</p>
+                <p>Isso modela a necessidade de satisfazer a cláusula escolhendo pelo menos um literal verdadeiro.</p>
+            </div>
+            <div class="gadget-box">
+                <div class="visual-triangle">
+                    <div class="node">l₁</div><br>
+                    <div style="margin-top: 20px;">
+                        <div class="node">l₂</div>
+                        <div class="node">l₃</div>
+                    </div>
+                    <p style="font-size: 16px; color: #6A9955; margin-top: 20px;">// Gadget da Cláusula Cᵢ</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">// m cláusulas → m triângulos → 3m vértices no total.</div>
+    </div>
+</body>
+</html>

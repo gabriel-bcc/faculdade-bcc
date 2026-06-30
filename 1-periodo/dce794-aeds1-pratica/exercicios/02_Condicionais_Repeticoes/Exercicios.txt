@@ -1,0 +1,105 @@
+================================================================
+EXERCICIOS: CONDICIONAIS E REPETICOES
+================================================================
+
+Lista de exercicios para praticar os conceitos de estruturas de controle (if/else),
+lacos de repeticao (for, while) e logica de programacao em C/C++.
+
+
+------------------------------
+FUNDAMENTOS DE LOGICA
+------------------------------
+
+1. Soma de Numeros Positivos
+Faca um projeto que leia numeros inteiros do usuario ate que seja digitado um numero negativo. Ao final, exiba:
+- A quantidade de numeros positivos digitados.
+- A soma total deles.
+
+2. Contador de Divisores
+Escreva um projeto que leia um numero inteiro positivo e determine:
+- Quantos divisores ele possui.
+- Se ele e primo ou nao.
+
+3. Validacao de Senha com Tentativas Limitadas
+Crie um projeto simples de validacao de senha.
+- A senha correta e "algoritmo123".
+- O usuario tem no maximo 3 tentativas.
+- Apos 3 erros, exiba uma mensagem de acesso negado.
+
+4. Fatorial de um Numero
+Desenvolva um projeto que le um numero inteiro maior que zero e calcula seu fatorial.
+- Mostre o calculo (ex: 5! = 5 x 4 x 3 x 2 x 1 = 120).
+- Valide para nao aceitar numeros menores ou iguais a 0.
+
+5. Soma Alternada
+Faca um projeto que leia um numero N e calcule a seguinte soma:
+S = 1 - 2 + 3 - 4 + 5 - 6 + ... +/- N
+- Exemplo: N = 5 -> 1 - 2 + 3 - 4 + 5 = 3.
+
+
+---------------------------------------
+SERIES MATEMATICAS E APROXIMACOES
+---------------------------------------
+
+6. Aproximacao de pi (Serie de Leibniz)
+Aproxime o valor de pi usando a formula, com um numero de termos N informado pelo usuario:
+pi aprox. = 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - ...)
+
+7. Aproximacao de Seno
+Calcule o valor aproximado de seno de x (em radianos) com N termos da serie:
+seno(x) aprox. = x - (x^3 / 3!) + (x^5 / 5!) - (x^7 / 7!) + ...
+
+8. Aproximacao de Cosseno
+Calcule o valor aproximado de cosseno de x (em radianos) com N termos da serie:
+cosseno(x) aprox. = 1 - (x^2 / 2!) + (x^4 / 4!) - (x^6 / 6!) + ...
+
+9. Aproximacao de pi (Serie de Nilakantha)
+Aproxime o valor de pi usando a seguinte serie, com N termos:
+pi aprox. = 3 + ( 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - ... )
+
+
+---------------------------------------
+ANALISE DE DADOS E ESTATISTICAS
+---------------------------------------
+
+10. Pesquisa de Altura e Sexo
+Leia um conjunto de dados contendo altura (1.00 a 2.30m) e sexo ('F' ou 'M'),
+com parada quando a altura for zero. Apresente:
+1. A porcentagem de pessoas com altura maior que 1,80 m.
+2. A media de altura dos homens.
+3. A porcentagem de mulheres menores que 1,70 m entre todas as pessoas.
+
+11. Pesquisa de Saude
+Leia dados de habitantes (tipo sanguineo, RH, pressao, idade) e valide as
+entradas. Calcule a porcentagem de pessoas com sangue A- ou B- entre
+aquelas com pressao alta (maxima > 14 ou minima > 10).
+
+
+-------------------------
+ANALISE DE FUNCOES
+-------------------------
+
+12. Tabulacao de Funcao Composta
+Tabule a funcao y = f(x) + g(x), para x = 1, 2, ... , 10 onde:
+h(x) = x^2 - 16
+f(x) = h(x) se h(x) >= 0; 1 se h(x) < 0
+g(x) = x^2 + 16 se f(x) = 0; 0 se f(x) > 0
+
+13. Maximo de Funcao Quadratica Bidimensional
+Encontre o valor maximo da funcao f(x, y) = 3*x^2 + 2*y^2 - 4*x*y + 7
+para valores inteiros de x e y no intervalo [-10, 10]. Exiba:
+- O valor maximo encontrado.
+- Os valores de x e y que geram esse maximo.
+
+14. Pico em Funcao Exponencial com Penalidade
+Encontre o valor maximo da funcao f(x, y) = 10*exp(-(x^2+y^2)/10) - |x - y|
+para x e y inteiros no intervalo [-5, 5]. Exiba:
+- O ponto (x, y) onde a funcao atinge seu valor maximo.
+- O valor maximo encontrado.
+
+15. Analise de Funcao Modular e Quadratica
+Para a funcao f(x, y) = |x + y| + x^2 - y, percorra os inteiros com
+x no intervalo [-8, 8] e y no intervalo [-5, 5]. Encontre:
+- O ponto (x, y) que gera o maior valor de f(x, y).
+- O valor maximo.
+- A quantidade de vezes que esse valor maximo aparece.

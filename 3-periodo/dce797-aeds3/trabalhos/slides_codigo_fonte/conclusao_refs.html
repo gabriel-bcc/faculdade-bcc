@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 32px;
+            margin-left: 40px;
+            margin-bottom: 30px;
+        }
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .summary-box {
+            border-left: 4px solid #4EC9B0;
+            padding-top: 10px;
+            padding-left: 20px;
+        }
+        .summary-box h3 {
+            color: #4EC9B0;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .summary-box p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .refs-box {
+            background-color: #252526;
+            border: 1px solid #333;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .refs-box h3 {
+            color: #CE9178;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .refs-box ul {
+            list-style: none;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .refs-box li {
+            margin-bottom: 15px;
+            color: #D4D4D4;
+        }
+        .highlight {
+            color: #569CD6;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+        .closing-msg {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 24px;
+            color: #CE9178;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/conclusao</div>
+        <div class="presenter-tag">APRESENTADOR 5</div>
+        <h2>Conclusão e Referências</h2>
+        <div class="main-content">
+            <div class="summary-box">
+                <h3>Resumo da Prova</h3>
+                <p>1. Mostramos que o <span class="highlight">Independent Set</span> pertence à classe <span class="highlight">NP</span> (verificável em tempo polinomial).</p>
+                <p>2. Realizamos uma redução de tempo polinomial do <span class="highlight">3-SAT</span> para o Independent Set.</p>
+                <p>3. Provamos a corretude da redução (se e somente se).</p>
+                <p><strong>Conclusão:</strong> O Independent Set é <span class="highlight">NP-Completo</span>.</p>
+            </div>
+            <div class="refs-box">
+                <h3>Bibliografia</h3>
+                <ul>
+                    <li>• <span class="highlight">Cormen, T. H. et al.</span> - Algoritmos: Teoria e Prática. 3ª Edição.</li>
+                    <li>• <span class="highlight">Garey, M. R.; Johnson, D. S.</span> - Computers and Intractability: A Guide to the Theory of NP-Completeness.</li>
+                    <li>• <span class="highlight">Sipser, M.</span> - Introdução à Teoria da Computação.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="closing-msg">
+            Obrigado pela atenção! Alguma dúvida?
+        </div>
+        <div class="footer">// Fim da apresentação. Exit code: 0</div>
+    </div>
+</body>
+</html>

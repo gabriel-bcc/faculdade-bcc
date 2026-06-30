@@ -1,0 +1,4 @@
+Maior valor
+Modifique o programa 3 do computador simplificado para encontrar e imprimir o maior dos valores da pilha de cartões. Assim como no programa 3, a entrada de dados interrompe quando o computador lê um cartão com o valor zero.
+
+Por exemplo: Se a pilha de cartões contém os seguintes valores em sequência: 12, 3, 45, 6, 7, 34, 2, 0, 102, 20, ..., o programa deverá imprimir o valor 45, que é o maior valor encontrado até ler o valor 0 (zero).

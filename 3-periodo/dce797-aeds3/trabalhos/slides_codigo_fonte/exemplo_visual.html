@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid #333;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            padding-top: 20px;
+            padding-left: 40px;
+            color: #4EC9B0;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .presenter-tag {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: #4EC9B0;
+            color: #1E1E1E;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h2 {
+            color: #569CD6;
+            font-size: 32px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+        }
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .formula-section {
+            border-left: 4px solid #CE9178;
+            padding-top: 10px;
+            padding-left: 20px;
+        }
+        .formula-section h3 {
+            color: #CE9178;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .formula-box {
+            background-color: #252526;
+            padding-top: 15px;
+            padding-left: 15px;
+            font-size: 20px;
+            color: #DCDCAA;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+        .steps {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .graph-visualization {
+            background-color: #252526;
+            border: 1px solid #333;
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 450px;
+        }
+        .triangles-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .triangle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px dashed #569CD6;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 200px;
+        }
+        .node {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #569CD6;
+            line-height: 46px;
+            text-align: center;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .conflict-line {
+            color: #CE9178;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #6A9955;
+            font-size: 14px;
+        }
+        .highlight { color: #4EC9B0; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">~/reducao/exemplo</div>
+        <div class="presenter-tag">APRESENTADOR 4</div>
+        <h2>Exemplo de Redução Visual</h2>
+        <div class="main-content">
+            <div class="formula-section">
+                <h3>Fórmula de Entrada</h3>
+                <div class="formula-box">
+                    Φ = (x ∨ y ∨ ¬z) ∧ (¬x ∨ ¬y ∨ z)
+                </div>
+                <div class="steps">
+                    <p>1. <span class="highlight">Vértices:</span> 6 vértices criados (3 por cláusula).</p>
+                    <p>2. <span class="highlight">Arestas de Cláusula:</span> Formam 2 triângulos.</p>
+                    <p>3. <span class="highlight">Arestas de Conflito:</span> Conectam literais opostos:</p>
+                    <p style="margin-left: 20px;">• x ↔ ¬x</p>
+                    <p style="margin-left: 20px;">• y ↔ ¬y</p>
+                    <p style="margin-left: 20px;">• ¬z ↔ z</p>
+                </div>
+            </div>
+            <div class="graph-visualization">
+                <p style="color: #569CD6; font-size: 18px;">Representação do Grafo G</p>
+                <div class="triangles-container">
+                    <div class="triangle">
+                        <p style="font-size: 12px; margin-bottom: 5px;">Cláusula 1</p>
+                        <div class="node">x</div>
+                        <div style="display: flex;">
+                            <div class="node">y</div>
+                            <div class="node">¬z</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; color: #CE9178; font-size: 24px;">↔</div>
+                    <div class="triangle">
+                        <p style="font-size: 12px; margin-bottom: 5px;">Cláusula 2</p>
+                        <div class="node">¬x</div>
+                        <div style="display: flex;">
+                            <div class="node">¬y</div>
+                            <div class="node">z</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="conflict-line">
+                    <p>// Arestas conectam literais contraditórios entre os triângulos</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">// Para Φ ser satisfatível, G deve ter um Independent Set de tamanho k = 2.</div>
+    </div>
+</body>
+</html>
